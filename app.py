@@ -2,10 +2,11 @@ import streamlit as st
 from fastai.vision.all import *
 import plotly.express as px
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+import platform
+plt = platform.system()
+if plt == "Linux": pathlib.WindowsPath = pathlib.PosixPath
 
-#title
+    #title
 st.title("Transportni tasniflovchi model")
 
 #rasmni joylash
